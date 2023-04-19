@@ -46,19 +46,9 @@
 			ut.email = #{email}
 	</select>
 	
-	<insert id="saveUser" parameterType="com.toyproject.bookmanagement.entity.User"
-		useGeneratedKeys="true"
-		keyProperty="userId">
+	<insert id="saveUser" parameterType="com.toyproject.bookmanagement.entity.User">
 		insert into user_tb
 		values (0, #{email}, #{password}, #{name}, #{provider})
-	</insert>
-	
-	<insert id="saveAuthority" parameterType="list">
-		insert into authority_tb
-		values
-		<foreach collection="list" item="authority" separator=",">
-			(0, #{authority.userId}, #{authority.roleId})
-		</foreach>
 	</insert>
 	
 </mapper>
