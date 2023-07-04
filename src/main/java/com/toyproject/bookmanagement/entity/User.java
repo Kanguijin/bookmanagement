@@ -20,7 +20,7 @@ public class User {
 	private String password;
 	private String name;
 	private String provider;
-	
+	private String profileImg;
 	private List<Authority> authorities;
 	
 	public PrincipalUser toPrincipal() {
